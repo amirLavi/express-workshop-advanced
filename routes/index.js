@@ -3,10 +3,11 @@ const express = require('express');
 var router = express.Router();
 var userRouter = require('./user');
 
-// router.use('/users', userRouter);
 // /api/
 router.get('/', function (req, res, next) {
     res.send('route /api route');
 })
+
+router.use('/users', userRouter);
 
 module.exports = router;
